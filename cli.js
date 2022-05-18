@@ -364,7 +364,7 @@ function dumpModelIntroURL() {
 
   if (Array.isArray(dumpedURLs) && dumpedURLs.length > 0) {
     dumpedURLs.forEach(dumpedURL => {
-      if (String(dumpedURL).includes('/intros?')) {
+      if (String(dumpedURL).includes('/intros/latest')) {
         modelIntroURL = dumpedURL;
       }
     });
@@ -378,7 +378,7 @@ function dumpModelInfoURL() {
 
   let customModelInfoURL = parsedModelInfoURL.protocol;
   customModelInfoURL += '//' + parsedModelInfoURL.host;
-  customModelInfoURL += parsedModelInfoURL.pathname.replace('/intros', '');
+  customModelInfoURL += parsedModelInfoURL.pathname.replace('/intros/latest', '');
 
   return customModelInfoURL;
 }
